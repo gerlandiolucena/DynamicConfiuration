@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "0830"
+   version = "1.7">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "#!/bin/sh&#10;chosenENVIRONMENT=&quot;prod&quot;&#10;BUNDLE_ID=&quot;net.gerlandiolucena.DynamicConfiguration.prd&quot;&#10;nameOfApp=&quot;(PRD)APP Oficial&quot;&#10;appInfoPlist=&quot;${PROJECT_DIR}/${INFOPLIST_FILE}&quot;&#10;&#10;#ENVIRONMENT&#10;/usr/libexec/PlistBuddy -c &quot;Delete :chosenEnvironment&quot; &quot;$appInfoPlist&quot;&#10;/usr/libexec/PlistBuddy -c &quot;Add :chosenEnvironment string&quot; &quot;$appInfoPlist&quot;&#10;/usr/libexec/PlistBuddy -c &quot;Set :chosenEnvironment \&quot;$chosenENVIRONMENT\&quot;&quot; &quot;$appInfoPlist&quot;&#10;&#10;#Bundle ID&#10;/usr/libexec/PlistBuddy -c &quot;Set :CFBundleIdentifier \&quot;$BUNDLE_ID\&quot;&quot; &quot;$appInfoPlist&quot;&#10;&#10;/usr/libexec/PlistBuddy -c &quot;Delete :CFBundleDisplayName&quot; &quot;$appInfoPlist&quot;&#10;/usr/libexec/PlistBuddy -c &quot;Add :CFBundleDisplayName string&quot; &quot;$appInfoPlist&quot;&#10;/usr/libexec/PlistBuddy -c &quot;Set :CFBundleDisplayName \&quot;$nameOfApp\&quot;&quot; &quot;$appInfoPlist&quot;&#10;&#10;#Build incrementation&#10;buildNumber=$(/usr/libexec/PlistBuddy -c &quot;Print CFBundleVersion&quot; &quot;$appInfoPlist&quot;)&#10;buildNumber=$(($buildNumber + 1))&#10;/usr/libexec/PlistBuddy -c &quot;Set :CFBundleVersion $buildNumber&quot; &quot;$appInfoPlist&quot;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "3A8D06C61F768A2D005F6CC4"
+                     BuildableName = "DynamicConfiguration.app"
+                     BlueprintName = "DynamicConfiguration"
+                     ReferencedContainer = "container:DynamicConfiguration.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A8D06C61F768A2D005F6CC4"
+               BuildableName = "DynamicConfiguration.app"
+               BlueprintName = "DynamicConfiguration"
+               ReferencedContainer = "container:DynamicConfiguration.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A8D06DA1F768A2D005F6CC4"
+               BuildableName = "DynamicConfigurationTests.xctest"
+               BlueprintName = "DynamicConfigurationTests"
+               ReferencedContainer = "container:DynamicConfiguration.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A8D06E51F768A2E005F6CC4"
+               BuildableName = "DynamicConfigurationUITests.xctest"
+               BlueprintName = "DynamicConfigurationUITests"
+               ReferencedContainer = "container:DynamicConfiguration.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3A8D06C61F768A2D005F6CC4"
+            BuildableName = "DynamicConfiguration.app"
+            BlueprintName = "DynamicConfiguration"
+            ReferencedContainer = "container:DynamicConfiguration.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </TestAction>
+   <LaunchAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3A8D06C61F768A2D005F6CC4"
+            BuildableName = "DynamicConfiguration.app"
+            BlueprintName = "DynamicConfiguration"
+            ReferencedContainer = "container:DynamicConfiguration.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3A8D06C61F768A2D005F6CC4"
+            BuildableName = "DynamicConfiguration.app"
+            BlueprintName = "DynamicConfiguration"
+            ReferencedContainer = "container:DynamicConfiguration.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>
